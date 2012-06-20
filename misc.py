@@ -11,6 +11,8 @@ from trie import Trie, IncompleteWord, flatten
 from random import choice
 from string import ascii_letters
 
+WORDLIST_URL = 'http://itasoftware.com/careers/work-at-ita/PuzzleFiles/WORD.LST'
+
 
 class LostException(Exception):
     pass
@@ -24,9 +26,8 @@ def print_greeting():
 def download_wordlist():
     """Download wordlist"""
     from urllib2 import urlopen
-    url = 'http://itasoftware.com/careers/work-at-ita/PuzzleFiles/WORD.LST'
 
-    response = urlopen(url)
+    response = urlopen(WORDLIST_URL)
     with open('WORD.LST', 'w') as fp:
         fp.write(response.read())
 
