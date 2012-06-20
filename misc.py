@@ -85,7 +85,7 @@ def player_turn(ds, letter_list):
         raise LostException(msg)
     except IncompleteWord:
         return letter
-
+    return letter
 
 def get_letter():
     """Get a single letter from the player"""
